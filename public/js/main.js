@@ -24,7 +24,17 @@ loadImage('/img/tiles.png')
     .then(level => {
         level.backgrounds.forEach(background => {
             drawBackground(background, context, sprites);
-        drawBackground(level.backgrounds[0], context, sprites);
         });
     });
+    for(let x = 0; x < 25; ++x){
+        for(let y = 0; y < 14; ++y){
+            sprites.drawTile('sky', context, x, y);
+        }
+    }
+    for(let x = 0; x < 25; ++x){
+        for(let y = 12; y < 14; ++y){
+            sprites.drawTile('ground', context, x, y);
+        }
+    }
+    
 });
